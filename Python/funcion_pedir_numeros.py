@@ -1,0 +1,16 @@
+#PROGRAMA CALCULADORA BASICA
+def Basic_Calc1(n1,n2):
+    print("")
+    print("PIRMER NUMERO =",n1)
+    print("SEGUNDO NUMERO =",n2)
+    print("")
+    print("The add is:",a+b)
+    print("T5he subs is:",a-b)
+    print("The mult is:",a*b)
+    print("The div (FLOAT) is:",a/b)
+    print("The div (INT) is:",int(a/b))    
+print ("::: Basic Calc :::")
+print ("")
+a= int(input("Digite el primer numero: "))
+b= int(input("Digite el segundo numero: "))
+Basic_Calc1(a,b)
