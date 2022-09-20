@@ -1,0 +1,147 @@
+Algoritmo cobros
+	Definir cc Como Entero;
+	
+	Definir i,estado,ide,id,contrato Como Entero;
+	Definir valor_cuotas,intereses,valor_afiliacionc,valorapagarmensual_afiliacion,cuotas,cuotasc,valorapagar_afiliacion,valor_afiliacion Como Real;
+	Definir nombres_titular,nombres_beneficiarios,direccion_afiliacion,celular_afiliacion Como Caracter;
+	Definir fecha_afiliacion,fecha_cobroactual_afiliacion Como Caracter;
+	
+	
+	i<-1;
+	
+	Dimension cuotasc[200];
+	Dimension id[200];
+	Dimension nombres_titular[200];
+	Dimension n_contrato[200];
+	Dimension nombres_beneficiarios[200];
+	Dimension fecha_afiliacion[200];
+	Dimension valor_afiliacion[200];
+	Dimension valorapagar_afiliacion[200];
+	Dimension direccion_afiliacion[200];
+	Dimension celular_afiliacion[200];
+	Dimension fecha_cobroactual_afiliacion[200];
+	Dimension valorapagarmensual_afiliacion[200];
+	
+	Escribir "::::::: PROGRAMA CALCULAR COBRO :::::::::";
+	Escribir "";
+	Repetir
+		Limpiar Pantalla
+		Escribir ":::: MENU PRINCIPAL ::::"; 
+		Escribir "";
+		Escribir "[1] Registro del Cliente";
+		Escribir "[2] Registro del cobros General.";
+		Escribir "[3] Registro del cobros Individual.";
+		Escribir "[4] Salir";
+		Escribir "Elija una opcion: ";
+		Leer op;
+		Segun op Hacer
+			1:
+				Limpiar Pantalla;
+				Escribir "";
+				Escribir "::::: REGISTRO DEL CLIENTE :::::";
+				Escribir "";
+				Repetir
+					estado <- 0;
+					Escribir "Digite la cedula del Cliente: ";
+					Leer cc;
+					
+					Para j<-1 Hasta i-1 Con Paso 1 Hacer
+						Si cc = id[j] Entonces
+							estado<-1;
+						FinSi
+					FinPara
+					Si estado = 1 Entonces
+						Escribir "La identificación ingresada ya existe.  Digite una nueva identificación.";
+					SiNo
+						id[i] <- cc;
+						Escribir "Digite el nombre completo del cliente: ";
+						Leer nombres_titular[i];
+						Escribir "Digite el nombre completo del beneficiarios: ";
+						Leer nombres_beneficiarios[i];
+						Escribir "N. del contrato: ";
+						Leer n_contrato[i];
+						Escribir "Fecha de la afiliacion: dd.mm.aa ";
+						Leer fecha_afiliacion[i];
+						Escribir "valor de la afiliacion: ";
+						Leer valor_afiliacionc;
+						valor_afiliacion[i]<-valor_afiliacionc;
+						Escribir "valor de cuota a pagar mensual: ";
+						intereses<-(valor_afiliacionc/100)*5;
+						Escribir intereses;
+						valorapagar_afiliacion[i]<-intereses;
+						Escribir "cantidad de cuotas a diferir el credito";
+						leer cuotas;
+						cuotasc[i]<-cuotas;
+						valor_cuotas<-((intereses*cuotas)+valor_afiliacionc)/cuotas;
+						valorapagarmensual_afiliacion[i]<-valor_cuotas;
+						Escribir "Digite su direccion: ";
+						Leer direccion_afiliacion[i];
+						Escribir "Digite su telefono o celular: ";
+						Leer celular_afiliacion[i];
+						Escribir "Fecha de cobro mensual: dd.mm.aa ";
+						Leer fecha_cobroactual_afiliacion[i];
+						Escribir "Los datos se registraron con éxito";
+					FinSi
+				Hasta Que estado = 0;	
+				
+				i<-i+1;					
+				
+				Escribir "Presione una tecla para volver a menú";
+				Esperar Tecla;			
+			2:
+				Limpiar Pantalla;
+				Escribir "";
+				Escribir "::::  Informacion de Cobro General ::::";
+				Escribir "";
+				Escribir " CC||NOMBRES||BENEFICIARIOS||N.CONTRATO||FECHA AFILIACION||VALOR AFILIACION||INTERES MENSUAL||PAGAR MENSUAL||DIRECCION|CONTACTO||FECHA COBRO||CUOTAS";
+				Para j<-1 Hasta i-1 Con Paso 1 Hacer
+					Escribir  id[j]," || ",nombres_titular[j]," || ",nombres_beneficiarios[j]," || ",n_contrato[j]," || ",fecha_afiliacion[j]," || ",valor_afiliacion[j]," || ",valorapagar_afiliacion[j]," || ",valorapagarmensual_afiliacion[j]," || ",direccion_afiliacion[j]," || ",celular_afiliacion[j]," || ",fecha_cobroactual_afiliacion[j]," || ",cuotasc[j];
+				FinPara
+				
+				Escribir "Presione una tecla para continuar...";
+				Esperar tecla;
+				
+			3:
+				Limpiar Pantalla;
+				Escribir "";
+				Escribir "::::  Informacion de Cobro Individual ::::";
+				Escribir "Digite la Identificación del usuario a buscar: ";
+				Leer ide;
+				estado<-0;
+				cont<-0;
+				Para j<-1 Hasta i-1 Con Paso 1 Hacer
+					Si ide = id[j] Entonces
+						cont=cont+1;
+						Escribir "N.",cont;
+						Escribir "Identificación: ", id[j];
+						Escribir "Nombres Completos: ", nombres_titular[j];
+						Escribir "nombres del beneficiario: ",nombres_beneficiarios[j];
+						Escribir "n. contrato: ", n_contrato[j];
+						Escribir "fecha de afiliacion: ",fecha_afiliacion[j];
+						Escribir "valor de afilacion: ",valor_afiliacion[j];
+						Escribir "interes mensual: ",valorapagar_afiliacion[j];
+						Escribir "valor a pagar mensualmente: ",valorapagarmensual_afiliacion[j];
+						Escribir "direccion: ",direccion_afiliacion[j];
+						Escribir "contacto: ",celular_afiliacion[j];
+						Escribir "fecha de cobro: ",fecha_cobroactual_afiliacion[j];
+						Escribir "cuotas: ",cuotasc[j];
+						Escribir "";
+						estado<-1;
+					FinSi					
+				FinPara
+				Si estado = 0 Entonces
+					Escribir "El usuario no existe";
+				FinSi	
+				Escribir "Presione una tecla para continuar...";
+				Esperar tecla;
+			4:
+				Limpiar Pantalla;
+				Escribir "Usted a salido del sistema";
+				
+				De Otro Modo
+				Escribir "opcion no valida";
+				Esperar Tecla
+				
+		Fin Segun
+	Hasta Que op=4;
+FinAlgoritmo
