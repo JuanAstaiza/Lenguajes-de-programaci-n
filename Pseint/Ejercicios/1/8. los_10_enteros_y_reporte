@@ -1,0 +1,23 @@
+Algoritmo los_10_enteros_P_y_reporte
+	//	Escriba un algoritmo que genere aleatoriamente 10 números enteros
+	//	positivos y los muestre por pantalla, y visualice además el siguiente
+	//	reporte:
+	//	- Total de números pares generados.
+	//	- Total de números impares generados.
+	Definir n, i , total_pares , total_impares como Entero;
+	n <- 0; i<-0; total_pares<-0; total_impares<-0;	
+	Escribir "Los 10 números aleatorios son:";
+	Mientras i<=9 Hacer
+		i<-i+1;
+		n <-azar(100);
+		Escribir i,". ", n;
+		Si n%2==0 Entonces
+			total_pares<-total_pares+1;
+		SiNo
+			total_impares<-total_impares+1;
+		Fin Si
+	FinMientras
+	Escribir "Total de números pares: ",total_pares
+	Escribir "Total de números impares: ",total_impares;
+	
+FinAlgoritmo

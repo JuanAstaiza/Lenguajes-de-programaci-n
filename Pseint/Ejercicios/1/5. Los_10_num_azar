@@ -1,0 +1,16 @@
+Proceso los_10_num_azar
+	// Escriba un algoritmo que genere aleatoriamente 10 números enteros
+	//	positivos y los muestre por pantalla. Use la función azar()
+	Definir n, i como Entero;
+	n <- 0;
+	i<-0;
+	Escribir "Los 10 números aleatorios son:";
+	Mientras i<=9 Hacer
+		i<-i+1;
+		n <-azar(100);
+		Escribir i,". ", n; 
+	FinMientras
+	
+	
+	
+FinProceso

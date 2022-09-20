@@ -1,0 +1,50 @@
+Algoritmo numero_de_X_personas_reporte
+	//Escriba un algoritmo que solicite por pantalla un número N de
+	//personas a ingresar, y pida de las personas la edad y el género (f/F,
+	//m/M u o/O). Al finalizar de solicitar los datos debe visualizar por
+    //pantalla el siguiente reporte:
+	// - Total de personas mayores de edad.
+	// - Total de personas menores de edad.
+	// - Total de personas de género femenino
+	//- Total de personas de género masculino
+	Definir contador,edad como Entero;
+	Definir total_P_mayores_E,total_P_menores_E como Entero;
+	Definir total_P_genero_M,total_P_genero_F como Entero;
+	
+	Definir genero como Cadena;
+	contador<-0;
+	edad<-0;
+	genero<-"";
+	total_P_mayores_E<-0;total_P_menores_E<-0;
+	total_P_genero_M<-0;total_P_genero_F<-0;
+	
+	Escribir "Escriba un Número de personas a ingresar: ";
+	Leer n;
+	Para contador<-1 Hasta n Con Paso 1 Hacer
+		Escribir "Digite la edad de la persona Número ",contador," :";
+		Leer edad;
+		Escribir "Digite la genero de la persona Número ",contador," (f/F, m/M u o/O) :";
+		Leer genero;
+		//CALCULAR TOTAL DE EDAD
+		Si edad<18 Entonces
+			//Menor de edad	
+			total_P_menores_E<-total_P_menores_E+1;
+		SiNo
+			//Mayor de edad
+			total_P_mayores_E<-total_P_mayores_E+1;
+		Fin Si
+		//CALCULAR TOTAL DE GENERO
+		Si genero=="m" O genero=="M" Entonces
+			total_P_genero_M<-total_P_genero_M+1;
+		SiNo
+			Si genero=="f" O genero=="F" Entonces
+				total_P_genero_F<-total_P_genero_F+1;
+			Fin Si
+		Fin Si	
+	Fin Para
+	Escribir "Total de personas mayores de edad: ",total_P_mayores_E;
+	Escribir "Total de personas menores de edad: ",total_P_menores_E;
+	Escribir "Total de personas de género femenino: ",total_P_genero_F;
+	Escribir "Total de personas de género masculino: ",total_P_genero_M;	
+
+FinAlgoritmo

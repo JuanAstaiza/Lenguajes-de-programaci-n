@@ -1,0 +1,13 @@
+Algoritmo suma_de_los_100_numeros
+	// Escriba un algoritmo que muestre por pantalla la suma de los
+	// primeros 100 números naturales.
+	Definir n,contador Como Entero;
+	n<-0;
+	contador<-0;
+	Mientras n<=99 Hacer
+		n<-n+1;
+		contador<-contador+n;
+		Escribir n," ",contador;
+	Fin Mientras
+	Escribir "Las suma de los 100 números es: ",contador;
+FinAlgoritmo

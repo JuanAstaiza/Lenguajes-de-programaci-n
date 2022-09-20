@@ -1,0 +1,41 @@
+Algoritmo os_10_enteros_P_Y_N_y_reporte
+	//	Escriba un algoritmo que genere aleatoriamente 10 números enteros
+	//	positivos y negativos, y los muestre por pantalla, y visualice además el
+	//	siguiente reporte:
+	//	- Total de números positivos pares generados.
+	//	- Total de números positivos impares generados.
+	//	- Total de números negativos pares generados.
+	//	- Total de números negativos impares generados
+	Definir n, i como Entero;	
+	Definir total_pares_positivos,total_impares_positivos Como Entero;
+	Definir total_pares_negativos,total_impares_negativos Como Entero;
+	
+	n <- 0; i<-0; total_pares_positivos<-0; total_impares_positivos<-0;	
+				total_pares_negativos<-0; total_impares_negativos<-0;
+	Escribir "Los 10 números aleatorios son:";
+	Mientras i<=9 Hacer
+		i<-i+1;
+		n <-azar(100)-50;
+		Escribir i,". ", n;
+		Si n>0 Entonces
+			//Es Positivo
+			Si n%2==0 Entonces
+				total_pares_positivos<-total_pares_positivos+1;
+			SiNo
+				total_impares_positivos<-total_impares_positivos+1;
+			Fin Si
+		SiNo
+			//Negativo
+			Si n%2==0 Entonces
+				total_pares_negativos<-total_pares_negativos+1;
+			SiNo
+				total_impares_negativos<-total_impares_negativos+1;
+			Fin Si
+		Fin Si
+		
+	FinMientras
+	Escribir "Total de números pares Positivos: ",total_pares_positivos
+	Escribir "Total de números impares Positivos: ",total_impares_positivos;
+	Escribir "Total de números pares Negativos: ",total_pares_negativos
+	Escribir "Total de números impares Negativos: ",total_impares_negativos;
+FinAlgoritmo

@@ -1,0 +1,9 @@
+Algoritmo multiplos_de_3_del_1_al_100
+	//Escriba un algoritmo que muestre por pantalla los múltiplos de 3
+	// comprendidos en la serie del 1 al 100.
+	Definir n,multiplo Como Entero;	
+	Para n<-1 Hasta 101 Con Paso 1 Hacer	
+		multiplo<-(n-1)*3;
+		Escribir n-1,". ",multiplo;
+    FinPara 
+FinAlgoritmo

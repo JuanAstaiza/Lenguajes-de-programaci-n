@@ -1,0 +1,17 @@
+Algoritmo tabla_multiplicar_x_numero
+	//  Escriba un algoritmo que solicite por pantalla al usuario un número N,
+	//	y de ese número ingresado se visualice la tabla de multiplicar
+	//	respectiva con una serie de 1 a 10.
+	Definir n,contador,resultado como Entero;
+	n<-0;
+	resultado<-0;
+	Escribir "Escriba un Número: ";
+	Leer n;
+	Escribir "";
+	Escribir "La Tabla de Multiplicar de ",n," es: ";
+	Para contador<-1 Hasta 10 Con Paso 1 Hacer
+		resultado<-contador*n;
+		Escribir contador," X ",n," = ",resultado;
+	Fin Para
+	
+FinAlgoritmo
